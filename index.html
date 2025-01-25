@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yacine Portfolio Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href=
+"picture/Screenshot 2024-11-22 213930.png" />
+  <script src="https://kit.fontawesome.com/0584cad3b7.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+  <div id="header">
+    <div class=" container"> 
+    <nav>
+      <h1> Yacine.</h1>
+      <ul id="sidemenu"> 
+        <li><a href="#header"> Home</a></li>
+        <li><a href="#about"> About</a></li>
+        <li><a href="#portfolio"> Portfolio</a></li>
+        <li><a href="#contact"> Contact</a></li>
+        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+      </ul>
+      <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+    </nav>
+
+    <div class="header-text">
+      <p> Electrical Engineering Student</p>
+      <h2> Hi, I'm <span>Yacine </span><br>Ouhrouche From Canada</h2>
+    </div>
+    </div>
+  </div>
+
+
+
+
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+         <img src="picture/picture.JPG">
+        </div>
+        <div class="about-col-2">
+          <h2 class="sub-title"> About Me</h2>
+        <p> I am an enthusiastic electrical engineering student with a strong passion for electronics and computer systems. Driven by
+          curiosity and innovation, I enjoy exploring how technology can solve real-world problems. My dedication to learning and hands-on experience allows me to dive into complex challenges, whether it's designing circuits, programming, or integrating hardware and software solutions. Always eager to expand your knowledge, I thrive in collaborative environments where I can contribute my skills and creativity.</p>
+
+          <div class="tab-titles">
+            <p class="tab-links active-link active-link" onclick="opentab('Interests')"> Interests</p>
+            <p class="tab-links" onclick="opentab('Skills')"> Skills</p>
+            <p class="tab-links" onclick="opentab('Software')"> Software</p>
+
+          </div>
+          <div class="tab-contents active-tab"  id="Interests">
+            <ul>
+              <li> <span>Electronics <i class="fa-solid fa-mobile-screen-button"></i></span></li>
+              <li> <span>Computers hardware <i class="fa-solid fa-computer"></i></span></li>
+              <li> <span>Chip Design <i class="fa-solid fa-microchip"></i></span></li>
+              
+              <li> <span>Autonomous Vehicules <i class="fa-solid fa-car"></i></span></li>
+
+             
+              
+            </ul>
+          </div>
+          <div class="tab-contents " id="Skills">
+            <ul>
+              <li> <span> PCB Design</span></li>
+              <li> <span>Computer Architecture</span></li>
+              <li> <span>Chip Assembky</span></li>
+
+              <li> <span>CAD Design <i class="fa-solid fa-ruler-horizontal"></i></span></li>
+
+              <li> <span>Analog/digital circuit Design</span><br> RF Circuit Design, Logic Circuit Design</li>
+              <li> <span>Hardware desccriptive Language</span><br> Verilog</li>
+              <li> <span>Embedded System</span><br> STM32</li>
+              <li> <span>Web Development <i class="fa-solid fa-globe"></i></span><br> Javascript, HTML, CSS</li>
+              <li> <span>Programming <i class="fa-solid fa-square-binary"></i></span><br>C++, Python</li></li>
+              
+              <li> <span>CAD Design <i class="fa-solid fa-ruler-horizontal"></i></span></li>
+              <li> <span>Library <i class="fa-solid fa-book-atlas"></i></span><br> <li class="library">Numpy, Pandas, Scikit-Learn, OpenCV</li>
+
+            </ul>
+          </div>
+          <div class="tab-contents" id="Software">
+            <ul>
+              <li> <span>PCB Design</span><br> Altium, KiCad</li>
+              <li> <span>Computer Architecture</span><br> Vivado, Logisim</li>
+              <li> <span>CAD Design</span><br> SolidWorks</li>
+              <li> <span>RF Circuit Design</span><br> Altium, KiCad</li>
+              <li> <span>Logic Circuit Design</span><br> Vivado, LTspice,Logisim</li>
+              <li> <span>Hardware desccriptive Language</span> <br> Vivado</li>
+              <li> <span>Embedded System</span><br> STM32cubeIDE</li>
+              <li> <span>Testing/Verification</span><br> Ansys, LTspice</li>
+
+
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+     </div>
+
+     <section id="portfolio">
+      <div class="portfolio-header">
+        <h2>My Portfolio</h2>
+        
+      </div>
+      <a href="index1.html"  class="btn"> See More</a>
+      <div class="work-list">
+        <div class="work">
+          <img src="picture/Screenshot 2024-12-19 134619.png" alt="Project 1">
+          <div class="layer">
+            <h3>Buck Converter</h3>
+            <p>A DC-DC converter that converts 12V into 5V.</p>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" class= "link" target="_blank">More Details</a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="picture/Screenshot 2024-12-23 190247.png" alt="Project 2">
+          <div class="layer">
+            <h3>Diabetes Predictor</h3>
+            <p> Developed a machine learning-based prediction with an svm model to predict the likelihood of a person having diabetes based on medical attributes, including age, BMI, blood pressure, and insulin level.</p>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" class= "link" target="_blank">More Details</a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="picture/Screenshot 2025-01-16 153325.png" alt="Project 3">
+          <div class="layer">
+            <h3>TCP Group Chat</h3>
+            <p> Multiple users can  join the chat room, send and receive messages in real time, and ensure that all participants are updated with the latest messages.</p>
+            <a href="https://github.com/YacineOuhrouche/TCP-group_chat" class= "link" target="_blank">Go to GitHub</a>
+          </div>
+        </div>
+        <div class="work">
+          <img src="picture/Screenshot 2025-01-17 130029.png" alt="Project 4">
+          <div class="layer">
+            <h3>Phishing Link Detector</h3>
+            <p>This project demonstrates the creation of a tool that identifies potentially harmful phishing links to enhance online security bu analyzing url</p>
+            <a href="https://github.com/YacineOuhrouche/Phishing_link_detector" class= "link" target="_blank">Go to GitHub</a>
+          </div>
+        </div>
+        
+      </div>
+      <a href="index1.html"  class="btn"> See More</a>
+    </section>
+
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h2 class="sub-title"> Contact Me</h2>
+            <p> <i class="fa-duotone fa-regular fa-paper-plane" ></i>yacine.ouhrouche04@hotmail.com</p>
+            <p> <i class="fa-solid fa-phone" ></i>+1 (581)-234-9293</p>
+            <div class="social-icons">
+              
+              <a href="https://www.linkedin.com/in/yacineouhrouche" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-linkedin" ></i>"> </i></a>
+            </div>
+     
+          </div>
+       
+   
+    </div>
+
+    
+     <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname){
+        for(tablink of tablinks){
+          tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+
+
+     </script>
+
+     <script> 
+      var sidemenu = document.getElementById("sidemenu");
+
+      function openmenu(){
+        sidemenu.style.right = "0";
+      }
+      function closemenu(){
+        sidemenu.style.right = "-200px";
+      }
+     </script>
+
+    
+</body>
+</html>
