@@ -1,12 +1,12 @@
 #portfolio {
   padding: 50px 20px;
-  background-color: #000; /* Black background */
+  background-color: linear-gradient(to right, #1e1e2e, #ff79c6);
   color: #fff; /* White text for contrast */
   margin-top: 50px; /* Add space above the section */
 }
 
 body{
-  background: #080808;
+  background: linear-gradient(to right, #000428, #004e92);
   color: #fff;
   
   }
