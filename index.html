@@ -6,8 +6,11 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="picture/Screenshot 2024-11-22 213930.png" />
   <script src="https://kit.fontawesome.com/0584cad3b7.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <title>Yacine Website</title>
   <style>
+    
   .language-selector {
     position: fixed;
     top: 20px;
@@ -114,20 +117,12 @@
             </ul>
           </div>
           <div class="tab-contents" id="Skills">
-            <ul>
-              <li><span data-lang="en">PCB Design</span></li>
-              <li><span data-lang="fr">Conception de PCB</span></li>
-              <li><span data-lang="en">Computer Architecture</span></li>
-              <li><span data-lang="fr">Architecture des ordinateurs</span></li>
-              <li><span data-lang="en">Chip Assembly</span></li>
-              <li><span data-lang="fr">Assemblage de puces</span></li>
-              <li><span data-lang="en">Embedded Systems</span></li>
-              <li><span data-lang="fr">Systèmes embarqués</span></li>
-              <li><span data-lang="en">Web Development</span></li>
-              <li><span data-lang="fr">Développement Web</span></li>
-              <li><span data-lang="en">Programming: C++, Python, Verilog, VHDL</span></li>
-              <li><span data-lang="fr">Programmation : C++, Python, Verilog, VHDL</span></li>
-            </ul>
+            <div class="skills-graph">
+              <h3 data-lang="en">Skills Graph</h3>
+              <h3 data-lang="fr">Graphique des Compétences</h3>
+              <canvas id="skillsChart" width="400" height="200"></canvas>
+            </div>
+           
           </div>
           <div class="tab-contents" id="Software">
             <ul>
@@ -283,5 +278,39 @@
  }
  
     </script>
+    <script>
+      var ctx = document.getElementById('skillsChart').getContext('2d');
+      var skillsChart = new Chart(ctx, {
+        type: 'radar', // Radar chart type
+        data: {
+          labels: ['PCB Design', 'Computer Architecture','Embedded Systems', 'C++','Python', 'Verilog', 'Javascript' ], // Skill labels
+          datasets: [{
+            label: 'Skill Level',
+            data: [85, 82, 75, 80, 85, 90, 70], // Skill levels (0-100)
+            backgroundColor: 'rgba(0, 123, 255, 0.2)', // Background color of the chart
+            borderColor: 'rgba(0, 123, 255, 1)', // Border color of the chart
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            r: {
+              min: 0,
+              max: 100,
+              ticks: {
+                stepSize: 20
+              }
+            }
+          },
+          elements: {
+            line: {
+              tension: 0.4 // Line tension (smoothness)
+            }
+          }
+        }
+      });
+    </script>
+    
 </body>
 </html>
