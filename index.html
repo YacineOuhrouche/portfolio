@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,54 @@
 
   <title>Yacine Website</title>
   <style>
-    
+     #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background-color: #007bff;
+      width: 0;
+      z-index: 9999;
+    }
+    .cursor {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: rgba(0, 123, 255, 0.7); /* Custom cursor color */
+      pointer-events: none;
+      transition: transform 0.2s ease;
+      z-index: 1000; /* Ensure the cursor is above other elements */
+    }
+
+    /* Mark style */
+    .cursor-mark {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(0, 123, 255, 0.7); /* Mark color */
+      pointer-events: none;
+      transform: scale(1);
+      animation: markAnimation 2s forwards;
+      z-index: 999; /* Ensure the mark appears above other elements */
+    }
+
+    @keyframes markAnimation {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+
+    /* Specific sections styles */
+    #about, #portfolio, #contact {
+      position: relative;
+    }
+
   .language-selector {
     position: fixed;
     top: 20px;
@@ -50,6 +98,9 @@
 </style>
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div id="progress-bar"></div>
+
   <!-- Language Selector -->
   <div class="language-selector">
     <button onclick="changeLanguage('en')">English</button>
@@ -311,6 +362,48 @@
         }
       });
     </script>
+
+<script>
+  // Mouse movement cursor effect
+  const cursor = document.createElement('div');
+  cursor.classList.add('cursor');
+  document.body.appendChild(cursor);
+
+  document.addEventListener('mousemove', (e) => {
+    const cursorX = e.clientX - cursor.offsetWidth / 2;
+    const cursorY = e.clientY - cursor.offsetHeight / 2;
+    cursor.style.left = `${cursorX}px`;
+    cursor.style.top = `${cursorY}px`;
+  });
+
+  // Mark effect on mousemove in specific sections
+  const sections = ['#about', '#portfolio', '#contact'];
+  sections.forEach(sectionId => {
+    const section = document.querySelector(sectionId);
+    section.addEventListener('mousemove', (e) => {
+      const mark = document.createElement('div');
+      mark.classList.add('cursor-mark');
+      mark.style.left = `${e.clientX - 5}px`;
+      mark.style.top = `${e.clientY - 5}px`;
+
+      section.appendChild(mark);
+
+      // Remove the mark after 2 seconds
+      setTimeout(() => {
+        mark.remove();
+      }, 2000);
+    });
+  });
+</script>
     
+<script>
+  // Scroll Progress Bar Functionality
+  window.addEventListener('scroll', function() {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPosition = window.scrollY;
+    const progress = (scrollPosition / scrollHeight) * 100;
+    document.getElementById('progress-bar').style.width = progress + '%';
+  });
+</script>
 </body>
 </html>
