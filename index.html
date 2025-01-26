@@ -2,33 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=
-  , initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href=
-"picture/Screenshot 2024-11-22 213930.png" />
+  <link rel="icon" href="picture/Screenshot 2024-11-22 213930.png" />
   <script src="https://kit.fontawesome.com/0584cad3b7.js" crossorigin="anonymous"></script>
   <title>Yacine Website</title>
+  <style>
+  .language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color:  linear-gradient(to right, #000428, #004e92);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .language-selector button {
+    background-color: #fff;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .language-selector button:hover {
+    background:  #ff004f;
+  }
+
+  .language-selector button:focus {
+    outline: none;
+  }
+
+  /* Optional custom styling for your other page sections */
+  /* Example for improving layout of sections */
+  #header {
+    padding-top: 60px; /* To account for the fixed language selector */
+  }
+</style>
 </head>
 <body>
-  <div id="header">
-    <div class=" container"> 
-    <nav>
-      <h1> Yacine.</h1>
-      <ul id="sidemenu"> 
-        <li><a href="#header"> Home</a></li>
-        <li><a href="#about"> About</a></li>
-        <li><a href="#portfolio"> Portfolio</a></li>
-        <li><a href="#contact"> Contact</a></li>
-        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-      </ul>
-      <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-    </nav>
+  <!-- Language Selector -->
+  <div class="language-selector">
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('fr')">Français</button>
+  </div>
 
-    <div class="header-text">
-      <p> Electrical Engineering Student</p>
-      <h2> Hi, I'm <span>Yacine </span><br>Ouhrouche From Canada</h2>
-    </div>
+  <div id="header">
+    <div class="container"> 
+      <nav>
+        <h1 data-lang="en">Yacine.</h1>
+        <h1 data-lang="fr">Yacine.</h1>
+        <ul id="sidemenu"> 
+          <li><a href="#header" data-lang="en">Home</a></li>
+          <li><a href="#about" data-lang="en">About</a></li>
+          <li><a href="#portfolio" data-lang="en">Portfolio</a></li>
+          <li><a href="#contact" data-lang="en">Contact</a></li>
+          <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+
+      <div class="header-text">
+        <p data-lang="en">Electrical Engineering Student</p>
+        <p data-lang="fr">Étudiant en génie électrique</p>
+        <h2 data-lang="en">Hi, I'm <span>Yacine</span><br>Ouhrouche From Canada</h2>
+        <h2 data-lang="fr">Salut, je suis <span>Yacine</span><br>Ouhrouche du Canada</h2>
+      </div>
     </div>
   </div>
 
@@ -41,101 +86,131 @@
           </div>
         </div>
         <div class="about-right">
-          <h2 class="sub-title">About Me</h2>
-          <p>I am an enthusiastic electrical engineering student with a passion for electronics and computer systems. My curiosity drives me to explore how technology can solve real-world problems. Whether it's designing circuits, programming, or integrating hardware and software, I enjoy the challenge of creating innovative solutions. Always eager to learn and grow, I thrive in environments where I can collaborate and contribute my skills.</p>
+          <h2 class="sub-title" data-lang="en">About Me</h2>
+          <h2 class="sub-title" data-lang="fr">À propos de moi</h2>
+          <p data-lang="en">I am an electrical engineering student passionate about electronics and computer systems. I enjoy tackling real-world challenges through circuit design, programming, and integrating hardware and software. Eager to learn and grow, I thrive in collaborative environments where I can contribute to innovative projects.</p>
+          <p data-lang="fr">Je suis étudiant en génie électrique, passionné par l’électronique et les systèmes informatiques. J’aime relever les défis du monde réel à travers la conception de circuits, la programmation et l’intégration du matériel et du logiciel. Désireux d’apprendre et de grandir, je m’épanouis dans des environnements collaboratifs où je peux contribuer à des projets innovants.</p>
           
           <div class="tab-titles">
-            <p class="tab-links active-link" onclick="opentab('Interests')">Interests</p>
-            <p class="tab-links" onclick="opentab('Skills')">Skills</p>
-            <p class="tab-links" onclick="opentab('Software')">Software</p>
+            <p class="tab-links active-link" onclick="opentab('Interests')" data-lang="en">Interests</p>
+            <p class="tab-links" onclick="opentab('Skills')" data-lang="en">Skills</p>
+            <p class="tab-links" onclick="opentab('Software')" data-lang="en">Software</p>
+            <p class="tab-links" onclick="opentab('Interests')" data-lang="fr">Centres d'intérêt</p>
+            <p class="tab-links" onclick="opentab('Skills')" data-lang="fr">Compétences</p>
+            <p class="tab-links" onclick="opentab('Software')" data-lang="fr">Logiciels</p>
           </div>
   
           <!-- Tab Content -->
           <div class="tab-contents active-tab" id="Interests">
             <ul>
-              <li><span>Electronics <i class="fa-solid fa-mobile-screen-button"></i></span></li>
-              <li><span>Computer Hardware <i class="fa-solid fa-computer"></i></span></li>
-              <li><span>Chip Design <i class="fa-solid fa-microchip"></i></span></li>
-              <li><span>Autonomous Vehicles <i class="fa-solid fa-car"></i></span></li>
+              <li><span data-lang="en">Electronics <i class="fa-solid fa-mobile-screen-button"></i></span></li>
+              <li><span data-lang="fr">Électronique <i class="fa-solid fa-mobile-screen-button"></i></span></li>
+              <li><span data-lang="en">Computer Hardware <i class="fa-solid fa-computer"></i></span></li>
+              <li><span data-lang="fr">Matériel informatique <i class="fa-solid fa-computer"></i></span></li>
+              <li><span data-lang="en">Chip Design <i class="fa-solid fa-microchip"></i></span></li>
+              <li><span data-lang="fr">Conception de puces <i class="fa-solid fa-microchip"></i></span></li>
+              <li><span data-lang="en">Autonomous Vehicles <i class="fa-solid fa-car"></i></span></li>
+              <li><span data-lang="fr">Véhicules autonomes <i class="fa-solid fa-car"></i></span></li>
             </ul>
           </div>
           <div class="tab-contents" id="Skills">
             <ul>
-              <li><span>PCB Design</span></li>
-              <li><span>Computer Architecture</span></li>
-              <li><span>Chip Assembly</span></li>
-              <li><span>Embedded Systems</span></li>
-              <li><span>Web Development</span></li>
-              <li><span>Programming: C++, Python, Verilog, VHDL</span></li>
+              <li><span data-lang="en">PCB Design</span></li>
+              <li><span data-lang="fr">Conception de PCB</span></li>
+              <li><span data-lang="en">Computer Architecture</span></li>
+              <li><span data-lang="fr">Architecture des ordinateurs</span></li>
+              <li><span data-lang="en">Chip Assembly</span></li>
+              <li><span data-lang="fr">Assemblage de puces</span></li>
+              <li><span data-lang="en">Embedded Systems</span></li>
+              <li><span data-lang="fr">Systèmes embarqués</span></li>
+              <li><span data-lang="en">Web Development</span></li>
+              <li><span data-lang="fr">Développement Web</span></li>
+              <li><span data-lang="en">Programming: C++, Python, Verilog, VHDL</span></li>
+              <li><span data-lang="fr">Programmation : C++, Python, Verilog, VHDL</span></li>
             </ul>
           </div>
           <div class="tab-contents" id="Software">
             <ul>
-              <li><span>Altium, KiCad</span> for PCB Design</li>
-              <li><span>Vivado, Logisim</span> for Computer Architecture</li>
-              <li><span>SolidWorks</span> for CAD Design</li>
-              <li><span>STM32cubeIDE</span> for Embedded Systems</li>
-              <li><span>Ansys, LTspice</span> for Testing/Verification</li>
+              <li><span >Altium, KiCad</span> for PCB Design</li>
+              <li><span >Vivado, Logisim</span> for Computer Architecture</li> 
+              <li><span >STM32cubeIDE</span> for Embedded Systems</li>
+              <li><span >Ansys, LTspice</span> for Testing/Verification</li>
+            
             </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+
   <section id="portfolio">
     <div class="portfolio-header">
-      <h2>My Portfolio</h2>
+      <h2 data-lang="en">My Portfolio</h2>
+      <h2 data-lang="fr">Mon Portfolio</h2>
     </div>
     <div class="work-list">
       <div class="work">
         <img src="picture/Screenshot 2024-12-19 134619.png" alt="Project 1">
         <div class="layer">
-          <h3>Buck Converter</h3>
-          <p>A DC-DC converter that converts 12V into 5V.</p>
-          <a href="https://yacineouhrouche-portfoli0.my.canva.site/" class="link" target="_blank">More Details</a>
+          <h3 data-lang="en">Buck Converter</h3>
+          <h3 data-lang="fr">Convertisseur Buck</h3>
+          <p data-lang="en">A DC-DC converter that converts 12V into 5V.</p>
+          <p data-lang="fr">Un convertisseur DC-DC qui convertit 12V en 5V.</p>
+          <a href="https://yacineouhrouche-portfoli0.my.canva.site/" class="link" target="_blank" data-lang="en">More Details</a>
+          <a href="https://yacineouhrouche-portfoli0.my.canva.site/" class="link" target="_blank" data-lang="fr">Plus de détails</a>
         </div>
       </div>
       <div class="work">
         <img src="picture/Screenshot 2024-12-23 190247.png" alt="Project 2">
         <div class="layer">
-          <h3>Diabetes Predictor</h3>
-          <p>Developed a machine learning-based prediction with an svm model to predict the likelihood of a person having diabetes.</p>
-          <a href="https://yacineouhrouche-portfoli0.my.canva.site/" class="link" target="_blank">More Details</a>
+          <h3 data-lang="en">Diabetes Predictor</h3>
+          <h3 data-lang="fr">Prédicteur de diabète</h3>
+          <p data-lang="en">Developed a machine learning-based prediction with an SVM model to predict the likelihood of a person having diabetes.</p>
+          <p data-lang="fr">Développement d'une prédiction basée sur l'apprentissage automatique avec un modèle SVM pour prédire la probabilité qu'une personne ait du diabète.</p>
+          <a href="https://yacineouhrouche-portfoli0.my.canva.site/" class="link" target="_blank" data-lang="en">More Details</a>
+          <a href="https://yacineouhrouche-portfoli0.my.canva.site/" class="link" target="_blank" data-lang="fr">Plus de détails</a>
         </div>
       </div>
       <div class="work">
         <img src="picture/Screenshot 2025-01-16 153325.png" alt="Project 3">
         <div class="layer">
-          <h3>TCP Group Chat</h3>
-          <p>Multiple users can join the chat room, send and receive messages in real time.</p>
-          <a href="https://github.com/YacineOuhrouche/TCP-group_chat" class="link" target="_blank">Go to GitHub</a>
+          <h3 data-lang="en">TCP Group Chat</h3>
+          <h3 data-lang="fr">Chat de groupe TCP</h3>
+          <p data-lang="en">Multiple users can join the chat room, send and receive messages in real time.</p>
+          <p data-lang="fr">Plusieurs utilisateurs peuvent rejoindre la salle de chat, envoyer et recevoir des messages en temps réel.</p>
+          <a href="https://github.com/YacineOuhrouche/TCP-group_chat" class="link" target="_blank" data-lang="en">Go to GitHub</a>
+          <a href="https://github.com/YacineOuhrouche/TCP-group_chat" class="link" target="_blank" data-lang="fr">Aller sur GitHub</a>
         </div>
       </div>
       <div class="work">
         <img src="picture/Screenshot 2025-01-17 130029.png" alt="Project 4">
         <div class="layer">
-          <h3>Phishing Link Detector</h3>
-          <p>Identifies potentially harmful phishing links to enhance online security.</p>
-          <a href="https://github.com/YacineOuhrouche/Phishing_link_detector" class="link" target="_blank">Go to GitHub</a>
+          <h3 data-lang="en">Phishing Link Detector</h3>
+          <h3 data-lang="fr">Détecteur de liens de phishing</h3>
+          <p data-lang="en">Identifies potentially harmful phishing links to enhance online security.</p>
+          <p data-lang="fr">Identifie les liens de phishing potentiellement nuisibles pour améliorer la sécurité en ligne.</p>
+          <a href="https://github.com/YacineOuhrouche/Phishing_link_detector" class="link" target="_blank" data-lang="en">Go to GitHub</a>
+          <a href="https://github.com/YacineOuhrouche/Phishing_link_detector" class="link" target="_blank" data-lang="fr">Aller sur GitHub</a>
         </div>
       </div>
     </div>
-    
   </section>
- 
+
   <div class="center-button">
     <a href="index1.html">
-      <button>See More</button>
+      <button data-lang="en">See More</button>
+      <button data-lang="fr">Voir plus</button>
     </a>
   </div>
-  
 
+  <!-- Contact Section -->
   <div id="contact">
     <div class="container">
       <div class="contact-card">
         <div class="contact-left">
-          <h2 class="sub-title">Get in Touch</h2>
+          <h2 class="sub-title" data-lang="en">Get in Touch</h2>
+          <h2 class="sub-title"data-lang="fr">Entrer en Contact</h2>
+
           <p><i class="fa-solid fa-envelope"></i> yacine.ouhrouche04@hotmail.com</p>
           <p><i class="fa-solid fa-phone"></i> +1 (581)-234-9293</p>
           
@@ -152,38 +227,61 @@
         <div class="contact-right">
           <form action="https://formspree.io/f/movjjadr" method="POST">
             <div class="input-group">
-              <input type="text" name="Name" placeholder="Your Name" required>
+              <input data-lang="en" type="text" name="Name" placeholder="Your Name" required>
+              <input data-lang="fr" type="text" name="Name" placeholder="Nom" required>
             </div>
             <div class="input-group">
-              <input type="email" name="Email" placeholder="Your Email" required>
+              <input data-lang="en" type="email" name="Email" placeholder="Your Email" required>
+              <input data-lang="fr" type="email" name="Email" placeholder=" Email" required>
+
             </div>
             <div class="input-group">
-              <textarea name="Message" rows="5" placeholder="Your Message"></textarea>
+              <textarea data-lang="en" name="Message" rows="5" placeholder="Your Message"></textarea>
+              <textarea data-lang="fr" name="Message" rows="5" placeholder=" Message"></textarea>
             </div>
-            <button type="submit" class="btn">Send Message</button>
+            <button data-lang="en" type="submit" class="btn">Send Message</button>
+            <button data-lang="fr" type="submit" class="btn">Envoyer </button>
           </form>
         </div>
       </div>
     </div>
   </div>
   
-  
+  <!-- JavaScript for language switch -->
+  <script>
+    var currentLang = 'en';
 
+    function changeLanguage(language) {
+      currentLang = language;
+      const elements = document.querySelectorAll('[data-lang]');
+
+      elements.forEach(element => {
+        if (element.getAttribute('data-lang') === currentLang) {
+          element.style.display = 'block';
+        } else {
+          element.style.display = 'none';
+        }
+      });
+    }
+
+    // Initially set to English
+    changeLanguage('en');
+  </script>
   <script> 
-   var tablinks = document.getElementsByClassName("tab-links");
-var tabcontents = document.getElementsByClassName("tab-contents");
-
-function opentab(tabname) {
-  for (tablink of tablinks) {
-    tablink.classList.remove("active-link");
-  }
-  for (tabcontent of tabcontents) {
-    tabcontent.classList.remove("active-tab");
-  }
-  event.currentTarget.classList.add("active-link");
-  document.getElementById(tabname).classList.add("active-tab");
-}
-
-   </script>
+    var tablinks = document.getElementsByClassName("tab-links");
+ var tabcontents = document.getElementsByClassName("tab-contents");
+ 
+ function opentab(tabname) {
+   for (tablink of tablinks) {
+     tablink.classList.remove("active-link");
+   }
+   for (tabcontent of tabcontents) {
+     tabcontent.classList.remove("active-tab");
+   }
+   event.currentTarget.classList.add("active-link");
+   document.getElementById(tabname).classList.add("active-tab");
+ }
+ 
+    </script>
 </body>
 </html>

@@ -5,167 +5,242 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="style1.css">
-  <link rel="icon" href=
-"picture/Screenshot 2024-11-22 213930.png" />
+  <link rel="icon" href="picture/Screenshot 2024-11-22 213930.png" />
   <script src="https://kit.fontawesome.com/0584cad3b7.js" crossorigin="anonymous"></script>
+  <style>
+    .language-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color:  linear-gradient(to right, #000428, #004e92);
+      border-radius: 5px;
+      padding: 10px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
+  
+    .language-selector button {
+      background-color: #fff;
+      border: none;
+      color: #333;
+      font-size: 16px;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  
+    .language-selector button:hover {
+      background:  #ff004f;
+    }
+  
+    .language-selector button:focus {
+      outline: none;
+    }
+  
+    #header {
+      padding-top: 60px;
+    }
+  </style>
 </head>
 <body>
+  <div class="language-selector">
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('fr')">Français</button>
+  </div>
   
-  <!-- Portfolio Section -->
   <section id="portfolio">
     <div class="portfolio-header">
-      <h2>My Portfolio</h2>
+      <h2 data-lang="en">My Portfolio</h2>
+      <h2 data-lang="fr">Mon Portfolio</h2>
       <div class="center-button">
-        <a href="index.html">
+        <a data-lang="en" href="index.html">
           <button>Return</button>
         </a>
+        <a data-lang="fr" href="index.html">
+          <button>Retour</button>
+        </a>
       </div>
-      
-    
     </div>
 
     <!-- Portfolio Categories -->
     <div class="work-list">
       <div class="category">
-        <h3>PCB Design</h3>
+        <h3 data-lang="en">PCB Design</h3>
+        <h3 data-lang="fr">Conception de PCB</h3>
         <div class="work">
           <img src="picture/Screenshot 2024-12-19 134619.png" alt="Buck Converter">
           <div class="layer">
-            <h3>Buck Converter</h3>
-            <p>A DC-DC converter that converts 12V into 5V.</p>
-            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" class="link">More Details</a>
+            <h3 data-lang="en">Buck Converter</h3>
+            <h3 data-lang="fr">Convertisseur Buck</h3>
+            <p data-lang="en">A DC-DC converter that converts 12V into 5V.</p>
+            <p data-lang="fr">Un convertisseur DC-DC qui convertit 12V en 5V.</p>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" data-lang="en" target="_blank" class="link">More Details</a>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" data-lang="fr" target="_blank" class="link">Plus de Détails</a>
           </div>
         </div>
         
         <div class="work">
-          <img src="picture/Screenshot 2024-12-19 142504.png" alt="Buck Converter">
+          <img src="picture/Screenshot 2024-12-19 142504.png" alt="Voltage Regulator">
           <div class="layer">
-            <h3>Voltage Regulator</h3>
-            <p> A device able to keep a steady voltage of 5V</p>
-            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" class="link">More Details</a>
+            <h3 data-lang="en">Voltage Regulator</h3>
+            <h3 data-lang="fr">Régulateur de Tension</h3>
+            <p data-lang="en">A device able to keep a steady voltage of 5V.</p>
+            <p data-lang="fr">Un dispositif capable de maintenir une tension stable de 5V.</p>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" data-lang="en" target="_blank" class="link">More Details</a>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" data-lang="fr" target="_blank" class="link">Plus de Détails</a>
           </div>
         </div>
-       
       </div>
       
-      
       <div class="category">
-        <h3>Machine Learning</h3>
+        <h3 data-lang="en">Machine Learning</h3>
+        <h3 data-lang="fr">Apprentissage Automatique</h3>
         <div class="work">
-          <img src="picture/Screenshot 2024-12-23 190247.png" alt="Buck Converter">
+          <img src="picture/Screenshot 2024-12-23 190247.png" alt="Diabetes Predictor">
           <div class="layer">
-            <h3>Diabetes Predictor</h3>
-            <p>Developed a machine learning-based prediction with an svm model to predict the likelihood of a person having diabetes based on medical attributes, including age, BMI, blood pressure, and insulin level.</p>
-            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" class="link">More Details</a>
+            <h3 data-lang="en">Diabetes Predictor</h3>
+            <h3 data-lang="fr">Prédicteur de Diabète</h3>
+            <p data-lang="en">Developed a machine learning-based prediction with an svm model to predict the likelihood of a person having diabetes based on medical attributes, including age, BMI, blood pressure, and insulin level.</p>
+            <p data-lang="fr">Développement d'une prédiction basée sur l'apprentissage automatique avec un modèle SVM pour prédire la probabilité qu'une personne ait du diabète en fonction des attributs médicaux, tels que l'âge, l'IMC, la pression artérielle et le niveau d'insuline.</p>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" data-lang="en" target="_blank" class="link">More Details</a>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" data-lang="fr" target="_blank" class="link">Plus de Détails</a>
+          </div>
+        </div>
 
+        <div class="work">
+          <img src="picture/Screenshot 2025-01-16 152353.png" alt="House Price Predictor">
+          <div class="layer">
+            <h3 data-lang="en">House Price Predictor</h3>
+            <h3 data-lang="fr">Prédicteur de Prix de Maison</h3>
+            <p data-lang="en">Developed machine learning model with a linear regression that can predict the price of a house based on various features, such as location, size, number of rooms, amenities, and more.</p>
+            <p data-lang="fr">Développement d'un modèle d'apprentissage automatique avec une régression linéaire capable de prédire le prix d'une maison en fonction de divers critères tels que l'emplacement, la taille, le nombre de chambres, les commodités, etc.</p>
+            <a href="https://github.com/YacineOuhrouche/housepricepredictor" data-lang="en"target="_blank" class="link">Go to GitHub</a>
+            <a href="https://github.com/YacineOuhrouche/housepricepredictor" data-lang="fr"target="_blank" class="link">Aller sur GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <h3 data-lang="en">Network</h3>
+        <h3 data-lang="fr">Réseau</h3>
+        <div class="work">
+          <img src="picture/Screenshot 2025-01-16 153325.png" alt="TCP Group-Chat">
+          <div class="layer">
+            <h3 data-lang="en">TCP Group-Chat</h3>
+            <h3 data-lang="fr">Discussion de Groupe TCP</h3>
+            <p data-lang="en">Multiple users can join the chat room, send and receive messages in real-time, and ensure that all participants are updated with the latest messages.</p>
+            <p data-lang="fr">Plusieurs utilisateurs peuvent rejoindre la salle de discussion, envoyer et recevoir des messages en temps réel, et s'assurer que tous les participants sont mis à jour avec les derniers messages.</p>
+            <a href="https://github.com/YacineOuhrouche/TCP-group_chat" target="_blank" data-lang="en" class="link">Go to GitHub</a>
+            <a href="https://github.com/YacineOuhrouche/TCP-group_chat" target="_blank" data-lang="fr " class="link">Aller sur GitHub</a>
           </div>
         </div>
         
         <div class="work">
-          <img src="picture/Screenshot 2025-01-16 152353.png" alt="Buck Converter">
+          <img src="picture/Screenshot 2025-01-16 152104.png" alt="Port Scanner">
           <div class="layer">
-            <h3>House Price Predictor</h3>
-            <p> Developed machine learning model with a linear regression that can predict the price of a house based on various features, such as location, size, number of rooms, amenities, and more.</p>
-            <a href="https://github.com/YacineOuhrouche/housepricepredictor" target="_blank" class="link">Go to GitHub</a>
+            <h3 data-lang="en">Port Scanner</h3>
+            <h3 data-lang="fr">Analyseur de Ports</h3>
+            <p data-lang="en">Design a Port Scanner that allows users to scan and analyze open ports on a server or network.</p>
+            <p data-lang="fr">Concevoir un analyseur de ports permettant aux utilisateurs de scanner et analyser les ports ouverts sur un serveur ou un réseau.</p>
+            <a href="https://github.com/YacineOuhrouche/port_scanner" data-lang="en" target="_blank" class="link">Go to GitHub</a>
+            <a href="https://github.com/YacineOuhrouche/port_scanner" data-lang="fr" target="_blank" class="link">Aller sur GitHub</a>
           </div>
         </div>
       </div>
 
       <div class="category">
-        <h3>Network</h3>
+        <h3 data-lang="en">Coding</h3>
+        <h3 data-lang="fr">Programmation</h3>
         <div class="work">
-          <img src="picture/Screenshot 2025-01-16 153325.png" alt="Buck Converter">
+          <img src="picture/Screenshot 2025-01-24 102434.png" alt="Stock Tracker">
           <div class="layer">
-            <h3>TCP Group-Chat</h3>
-            <p>Multiple users can  join the chat room, send and receive messages in real time, and ensure that all participants are updated with the latest messages. </p>
-            <a href="https://github.com/YacineOuhrouche/TCP-group_chat" target="_blank" class="link">Go to GitHub</a>
+            <h3 data-lang="en">Stock Tracker</h3>
+            <h3 data-lang="fr">Suivi des Actions</h3>
+            <a href="https://capable-sawine-7f4972.netlify.app/" data-lang="en"target="_blank" class="link">Take A Look</a>
+            <a href="https://capable-sawine-7f4972.netlify.app/" data-lang="fr " target="_blank" class="link">Jetez un œil</a>
           </div>
         </div>
-        
+
         <div class="work">
-          <img src="picture/Screenshot 2025-01-16 152104.png" alt="Buck Converter">
+          <img src="picture/Screenshot 2025-01-24 131246.png" alt="Translator">
           <div class="layer">
-            <h3>Port Scanner</h3>
-            <p> Design a Port Scanner that allows users to scan and analyze open ports on a server or network.</p>
-            <a href="https://github.com/YacineOuhrouche/port_scanner" target="_blank" class="link">Go to GitHub</a>
+            <h3 data-lang="en">Translator</h3>
+            <h3 data-lang="fr">Traducteur</h3>
+            <a href="https://bejewelled-mermaid-64f617.netlify.app/" data-lang="en"target="_blank" class="link">Take A Look</a>
+            <a href="https://bejewelled-mermaid-64f617.netlify.app/"  data-lang="fr" target="_blank" class="link">Jetez un œil</a>
           </div>
         </div>
       </div>
 
+      <div class="category">
+        <h3 data-lang="en">Logic Circuit Design</h3>
+        <h3 data-lang="fr">Conception de Circuits Logiques</h3>
+        <div class="work">
+          <img src="picture/Screenshot 2024-11-05 180246.png" alt="4-bit ALU">
+          <div class="layer">
+            <h3 data-lang="en">4-bit ALU</h3>
+            <h3 data-lang="fr">ALU 4 bits</h3>
+            <p data-lang="en">Designed a 4-bit ALU capable of performing basic arithmetic and logical operations based on control signals.</p>
+            <p data-lang="fr">Conception d'un ALU 4 bits capable d'effectuer des opérations arithmétiques et logiques de base en fonction des signaux de contrôle.</p>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" data-lang="en" target="_blank" class="link">More Details</a>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" data-lang="fr"target="_blank" class="link">Plus de Détails</a>
+          </div>
+        </div>
 
-      <div class="category">
-        <h3>Coding</h3>
-    
         <div class="work">
-          <img src="picture/Screenshot 2025-01-24 102434.png" alt="4-bit ALU Project">
+          <img src="picture/Screenshot 2024-11-05 162116.png" alt="4-bit Register">
           <div class="layer">
-            <h3>Stock Tracker</h3>
-            <a href="https://capable-sawine-7f4972.netlify.app/" target="_blank" class="link">Take A Look</a>
+            <h3 data-lang="en">4-bit Register</h3>
+            <h3 data-lang="fr">Registre 4 bits</h3>
+            <p data-lang="en">Created a register capable of storing a 4-bit binary value with a clocked load input for storing data on the rising clock edge.</p>
+            <p data-lang="fr">Création d'un registre capable de stocker une valeur binaire 4 bits avec une entrée de chargement synchronisée pour stocker les données sur le front montant de l'horloge.</p>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" data-lang="en"target="_blank" class="link">More Details</a>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" data-lang="fr"target="_blank" class="link">Plus de Détails</a>
           </div>
         </div>
-        <div class="work">
-          <img src="picture/Screenshot 2025-01-24 131246.png" alt="4-bit ALU Project">
-          <div class="layer">
-            <h3>Translator</h3>
-            <a href="https://bejewelled-mermaid-64f617.netlify.app/" target="_blank" class="link">Take A Look</a>
-          </div>
-        </div>
-       
-      </div>
-      <!-- Logic Circuit Design Projects -->
-      <div class="category">
-        <h3>Logic Circuit Design</h3>
-        <div class="work">
-          <img src="picture/Screenshot 2024-11-05 180246.png" alt="4-bit ALU Project">
-          <div class="layer">
-            <h3>4-bit ALU</h3>
-            <p>Designed a 4-bit ALU capable of performing basic arithmetic and logical operations based on control signals.</p>
-            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" class="link">More Details</a>
-          </div>
-        </div>
-        <div class="work">
-          <img src="picture/Screenshot 2024-11-05 162116.png" alt="4-bit Register Project">
-          <div class="layer">
-            <h3>4-bit Register</h3>
-            <p>Created a register capable of storing a 4-bit binary value with a clocked load input for storing data on the rising clock edge.</p>
-            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" class="link">More Details</a>
-          </div>
-        </div>
-       
       </div>
 
+      <div class="category">
+        <h3 data-lang="en">Cybersecurity</h3>
+        <h3 data-lang="fr">Cybersécurité</h3>
+        <div class="work">
+          <img src="picture/Screenshot 2025-01-17 130029.png" alt="Phishing Link Detector">
+          <div class="layer">
+            <h3 data-lang="en">Phishing Link Detector</h3>
+            <h3 data-lang="fr">Détecteur de Liens Phishing</h3>
+            <p data-lang="en">This project demonstrates the creation of a tool that identifies potentially harmful phishing links to enhance online security by analyzing URLs.</p>
+            <p data-lang="fr">Ce projet démontre la création d'un outil qui identifie les liens de phishing potentiellement dangereux afin d'améliorer la sécurité en ligne en analysant les URL.</p>
+            <a href="https://github.com/YacineOuhrouche/Phishing_link_detector" data-lang="en"class="link" target="_blank">Go to GitHub</a>
+            <a href="https://github.com/YacineOuhrouche/Phishing_link_detector" data-lang="fr"class="link" target="_blank">Aller sur GitHub</a>
+          </div>
+        </div>
+
+        <div class="work">
+          <img src="picture/Screenshot 2025-01-16 153745.png" alt="Message Encryptor">
+          <div class="layer">
+            <h3 data-lang="en">Message Encryptor</h3>
+            <h3 data-lang="fr">Cryptage de Message</h3>
+            <a href="https://github.com/YacineOuhrouche/MessageEncryptor" data-lang="en"target="_blank" class="link">Go to GitHub</a>
+            <a href="https://github.com/YacineOuhrouche/MessageEncryptor" data-lang="fr"target="_blank" class="link">Aller sur GitHub</a>
+          </div>
+        </div>
+      </div>
 
       <div class="category">
-        <h3>Cybersecurity</h3>
-        <div class="work">
-          <img src="picture/Screenshot 2025-01-17 130029.png" alt="Project 4">
-          <div class="layer">
-            <h3>Phishing Link Detector</h3>
-            <p>This project demonstrates the creation of a tool that identifies potentially harmful phishing links to enhance online security bu analyzing url</p>
-            <a href="https://github.com/YacineOuhrouche/Phishing_link_detector" class= "link" target="_blank">Go to GitHub</a>
-          </div>
-        </div>
-        <div class="work">
-          <img src="picture/Screenshot 2025-01-16 153745.png " alt="4-bit ALU Project">
-          <div class="layer">
-            <h3>Message Encryptor</h3>
-            <p>Made a Python program that encrypts and decrypts messages using a basic encryption technique called the Caesar Cipher. The Caesar Cipher shifts each letter of the message by a certain number (called "shift value"). This means each letter is replaced by another letter that’s a few places ahead or behind in the alphabet.</p>
-            <a href="https://github.com/YacineOuhrouche/message_encryptor" target="_blank" class="link">Go to GitHub</a>
-          </div>
-        </div>
-        
-        
-      </div>
-      
-             <!-- Embedded System Projects -->
-      <div class="category">
-        <h3>Embedded Systems</h3>
+        <h3 data-lang="en">Embedded Systems</h3>
+        <h3 data-lang="fr">systèmes embarqués</h3>
         <div class="work">
           <img src="picture/thumbnail_IMG_6433.jpg" alt="Plant Data Analyzer Project">
           <div class="layer">
-            <h3>Plant Data Analyzer</h3>
-            <p>A device that collects data to moderate the plant's health.</p>
-            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" class="link">More Details</a>
+            <h3 data-lang="en">Plant Data Analyzer</h3>
+            <h3 data-lang="fr">
+              Analyseur de données sur une fleur</h3>
+            <p data-lang="en">A device that collects data to moderate the plant's health.</p>
+            <p data-lang="fr">Un appareil qui collecte des données pour modérer la santé de la plante.</p>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" data-lang="en" class="link">More Details</a>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" data-lang="fr" class="link">Plus De Détails</a>
           </div>
         </div>
       </div>
@@ -176,8 +251,10 @@
         <div class="work">
           <img src="picture/Screenshot 2025-01-25 145454.png" alt="Plant Data Analyzer Project">
           <div class="layer">
-            <h3>Orbital Simulator</h3>
-            <a href="https://yacineouhrouche.github.io/other/" target="_blank" class="link">Take A Look</a>
+            <h3 data-lang="en">Orbital Simulator</h3>
+            <h3 data-lang="fr">Simulation Du System Solaire</h3>
+            <a href="https://yacineouhrouche.github.io/other/" target="_blank" class="link" data-lang="en">Take A Look</a>
+            <a href="https://yacineouhrouche.github.io/other/" target="_blank" class="link" data-lang="fr">Jetez un œil</a>
             
            
           </div>
@@ -185,12 +262,16 @@
       </div>
 
       <div class="category">
-        <h3>Other</h3>
+        <h3 data-lang="en">Other</h3>
+        <h3 data-lang="fr"> Autre</h3>
+        
         <div class="work">
           <img src="picture/Screenshot 2025-01-25 132802.png" alt="Plant Data Analyzer Project">
           <div class="layer">
-            <h3>Falling Sand Simulator</h3>
-            <a href="https://yacineouhrouche.github.io/other/" target="_blank" class="link">Take A Look</a>
+            <h3 data-lang="en">Falling Sand Simulator</h3>
+            <h3 data-lang="fr">Simulateur De Chute De Sable</h3>
+            <a href="https://yacineouhrouche.github.io/other/" target="_blank" class="link" data-lang="en">Take A Look</a>
+            <a href="https://yacineouhrouche.github.io/other/" target="_blank" class="link" data-lang="fr">Jetez un œil</a>
             
            
           </div>
@@ -202,12 +283,31 @@
     
     
     <div class="center-button">
-      <a href="index.html">
+      <a href="index.html" data-lang="en">
         <button>Return</button>
       </a>
+      <a href="index.html" data-lang="fr">
+        <button>Retour</button>
+      </a>
     </div>
+    </div>
+
     
   </section>
 
+  <script>
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-lang]');
+      elements.forEach((element) => {
+        if (element.dataset.lang !== lang) {
+          element.style.display = 'none';
+        } else {
+          element.style.display = 'block';
+        }
+      });
+    }
+
+    changeLanguage('en');  // Default to English
+  </script>
 </body>
 </html>
