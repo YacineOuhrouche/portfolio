@@ -31,35 +31,35 @@ body {
 
 /* Button Styles */
 .filter-menu button {
-  background-color:  #00d4ff;
-  color: #fff;
+  background-color: transparent; /* No background */
+  color: #fff; /* Lighter gray text color */
   font-size: 16px;
-  padding: 12px 20px;
-  border: none;
+  padding: 8px 16px;
+  border: none; /* Remove the border */
   cursor: pointer;
   border-radius: 25px;
-  transition: all 0.3s ease;
-  font-weight: 600;
+  transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 .filter-menu button:hover {
-  background-color:  #ff004f;
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: #333; /* Slightly darker text on hover */
+  background-color: rgba(0, 0, 0, 0.05); /* Very subtle background change on hover */
 }
 
 .filter-menu button:focus {
-  outline: none;
+  outline: none; /* Remove focus outline */
 }
 
 /* Active Button Style */
 .filter-menu button.active {
-  background-color: #28a745;
+  color: #222; /* Darker text for active state */
 }
 
 .filter-menu button.active:hover {
-  background-color: #218838;
+  background-color: rgba(0, 0, 0, 0.1); /* Very subtle hover effect when active */
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
