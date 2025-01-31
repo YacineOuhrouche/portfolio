@@ -49,7 +49,7 @@ body{
 /* Portfolio Section */
 .work-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  grid-template-columns: repeat(4, 1fr); /* 3 items per row */
   gap: 30px; /* Space between grid items */
   grid-gap:40px;
   margin-top: 50px;
@@ -69,7 +69,7 @@ body{
 .work img {
   width: 100%;
   border-radius: 10px;
-  height: 375px; /* Taller image height */
+  height: 300px; /* Taller image height */
   object-fit: cover;
   margin-top: 10px;
   border-radius: 10px;

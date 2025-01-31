@@ -131,16 +131,26 @@ body {
       </div>
     </div>
     <div class="filter-menu">
-      <button onclick="filterPortfolio('all')">All</button>
-      <button onclick="filterPortfolio('PCB Design')">PCB Design</button>
-      <button onclick="filterPortfolio('Machine Learning')">Machine Learning</button>
-      <button onclick="filterPortfolio('Network')">Network</button>
-      <button onclick="filterPortfolio('Coding')">Coding</button>
-      <button onclick="filterPortfolio('Logic Circuit Design')">Logic Circuit Design</button>
-      <button onclick="filterPortfolio('Cybersecurity')">Cybersecurity</button>
-      <button onclick="filterPortfolio('Embedded Systems')">Embedded Systems</button>
-      <button onclick="filterPortfolio('Simulation')">Simulation</button>
-      <button onclick="filterPortfolio('Other')">Other</button>
+      <button data-lang="en" onclick="filterPortfolio('all')">All</button>
+      <button data-lang="en" onclick="filterPortfolio('PCB Design')">PCB Design</button>
+      <button data-lang="en" onclick="filterPortfolio('Machine Learning')">Machine Learning</button>
+      <button data-lang="en"  onclick="filterPortfolio('Network')">Network</button>
+      <button data-lang="en" onclick="filterPortfolio('Coding')">Coding</button>
+      <button data-lang="en" onclick="filterPortfolio('Logic Circuit Design')">Logic Circuit Design</button>
+      <button data-lang="en" onclick="filterPortfolio('Cybersecurity')">Cybersecurity</button>
+      <button data-lang="en" onclick="filterPortfolio('Signal Processing')">Signal Processing</button>
+      <button data-lang="en" onclick="filterPortfolio('Other')">Other</button>
+
+      <button data-lang="fr" onclick="filterPortfolio('all')">Tout</button>
+      <button data-lang="fr" onclick="filterPortfolio('PCB Design')">Conception de PCB</button>
+      <button data-lang="fr" onclick="filterPortfolio('Machine Learning')">Machine Automatique</button>
+      <button data-lang="fr" onclick="filterPortfolio('Network')">Réseau</button>
+      <button data-lang="fr" onclick="filterPortfolio('Coding')">Coding</button>
+      <button data-lang="fr"  onclick="filterPortfolio('Logic Circuit Design')">Conception de circuits logiques</button>
+      <button data-lang="fr" onclick="filterPortfolio('Cybersecurity')">Cybersecurité</button>
+      <button data-lang="fr" onclick="filterPortfolio('Signal Processing')">Signal </button>
+ 
+      <button data-lang="fr" onclick="filterPortfolio('Other')">Autres</button>
     </div>
     
     <!-- Portfolio Categories -->
@@ -307,53 +317,69 @@ body {
         </div>
       </div>
 
-      <div class="category" data-category="Embedded Systems">
-        <h3 data-lang="en">Embedded Systems</h3>
-        <h3 data-lang="fr">systèmes embarqués</h3>
+      <div class="category" data-category="Signal Processing">
+        <h3 data-lang="en">Signal Processing</h3>
+        <h3 data-lang="fr">Signal </h3> 
         <div class="work">
-          <img src="picture/thumbnail_IMG_6433.jpg" alt="Plant Data Analyzer Project">
+          <img src="picture/Screenshot 2025-01-30 112838.png" alt="Phishing Link Detector">
           <div class="layer">
-            <h3 data-lang="en">Plant Data Analyzer</h3>
-            <h3 data-lang="fr">
-              Analyseur de données sur une fleur</h3>
-            <p data-lang="en">A device that collects data to moderate the plant's health.</p>
-            <p data-lang="fr">Un appareil qui collecte des données pour modérer la santé de la plante.</p>
-            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" data-lang="en" class="link">More Details</a>
-            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" data-lang="fr" class="link">Plus De Détails</a>
+            <h3 data-lang="en">Noise Cancellation</h3>
+            <h3 data-lang="fr">suppression du bruit</h3>
+            <p data-lang="en">
+              A tool that substract unwanted noise</p>
+            <p data-lang="fr">Un outil qui enlève les bruits indésirables</p>
+            <a href="https://github.com/YacineOuhrouche/Noise_cancellation" data-lang="en"class="link" target="_blank">Go to GitHub</a>
+            <a href="https://github.com/YacineOuhrouche/Noise_cancellation" data-lang="fr"class="link" target="_blank">Aller sur GitHub</a>
           </div>
         </div>
-      </div>
 
-      
-      <div class="category" data-category="Simulation">
-        <h3>Simulation</h3>
         <div class="work">
-          <img src="picture/Screenshot 2025-01-25 145454.png" alt="Plant Data Analyzer Project">
+          <img src="picture/Screenshot 2025-01-30 112112.png" alt="Message Encryptor">
           <div class="layer">
-            <h3 data-lang="en">Orbital Simulator</h3>
-            <h3 data-lang="fr">Simulation Du System Solaire</h3>
-          
-           
+            <h3 data-lang="en">Audio Equilizer</h3>
+            <h3 data-lang="fr">
+              Égaliseur audio</h3>
+              <p data-lang="en">
+                Coded a tool that allows users to adjust the balance of different frequency components of an audio signal.</p>
+                <p data-lang="fr">
+                  Un outil qui permet aux utilisateurs d'ajuster la balance des différentes composantes de fréquence d'un signal audio.</p>
+            <a href="https://github.com/YacineOuhrouche/Audio_equilizer" data-lang="en"target="_blank" class="link">Go to GitHub</a>
+            <a href="https://github.com/YacineOuhrouche/Audio_equilizer" data-lang="fr"target="_blank" class="link">Aller sur GitHub</a>
           </div>
         </div>
       </div>
 
       <div class="category" data-category="Other">
-        <h3 data-lang="en">Other</h3>
-        <h3 data-lang="fr"> Autre</h3>
-        
+        <h3 data-lang="en">Other </h3>
+        <h3 data-lang="fr">Autres</h3>
         <div class="work">
-          <img src="picture/Screenshot 2025-01-29 130656.png" alt="Plant Data Analyzer Project">
+          <img src="picture/thumbnail_IMG_6433.jpg" alt="Phishing Link Detector">
+          <div class="layer">
+            <h3 data-lang="en">Plant Data Analyzer</h3>
+            <h3 data-lang="fr"> Analyseur de données sur une fleur</h3>
+            <p data-lang="en">A device that collects data to moderate the plant's health.</p>
+            <p data-lang="fr">Un appareil qui collecte des données pour modérer la santé de la plante.</p>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" data-lang="en" class="link">More Details</a>
+            <a href="https://yacineouhrouche-portfoli0.my.canva.site/" target="_blank" data-lang="fr" class="link">Plus De Détails</a>
+            
+          </div>
+        </div>
+
+        <div class="work">
+          <img src="picture/Screenshot 2025-01-29 130656.png" alt="Message Encryptor">
           <div class="layer">
             <h3 >BlackJack</h3>
-           
+            
+
             <a href="https://warm-jelly-2efa39.netlify.app/" target="_blank" class="link" data-lang="en">Take A Look</a>
             <a href="https://warm-jelly-2efa39.netlify.app/" target="_blank" class="link" data-lang="fr">Jetez un œil</a>
             
-           
           </div>
         </div>
       </div>
+    
+
+      
 
     </div>
     
